@@ -125,5 +125,23 @@ describe('application logic', () => {
                 })
             }));
         });
+
+        it('only allows votes if selection is in current pair', () => {
+            const state = Map({
+                pair: List.of('Trainspotting', '28 Days Later'),
+                tally: Map({
+                    'Trainspotting': 3,
+                    '28 Days Later': 2
+                })
+            });
+            const nextState = vote(state, '500 Days of Summer');
+            expect(nextState).to.equal(Map({
+                pair: List.of('Trainspotting', '28 Days Later'),
+                tally: Map({
+                    'Trainspotting': 3,
+                    '28 Days Later': 2
+                })
+            }))
+        });
     });
 });
