@@ -1,0 +1,9 @@
+/voting-client/node_modules
+/voting-client/dist
+/voting-client/package-lock.json
+
+/voting-server/node_modules
+/voting-server/dist
+/voting-serve/package-lock.json
+
+.DS_Store
